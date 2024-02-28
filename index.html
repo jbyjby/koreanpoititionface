@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/${VERSION}/kakao.min.js" integrity="${INTEGRITY_VALUE}" crossorigin="anonymous"></script>
+    <script>
+      Kakao.init("38f29a9f6e62558e30e1318a0713e849");
+      Kakao.isInitialized();
+    </script>
+    <title>정치관상테스트</title>
+  </head>
+  <body>
+    <div class="title">
+      <h4>투표에 진심인 초보 개발자가 만든</h4>
+      <h1>정치 관상 테스트</h1>
+    </div>
+    <p>정치인 얼굴 합성 설명 추가</p>
+    <div class="politician">
+      <img class="politicianImg" src="/img/left1.jpg" alt="민주 남자" />
+      <img class="politicianImg" src="/img/left2.jpg" alt="민주 여자" />
+      <img class="politicianImg" src="/img/right1.jpg" alt="국힘 남자 " />
+      <img class="politicianImg" src="/img/right2.jpg" alt="국힘 여자" />
+    </div>
+    <div class="ad">광고</div>
+    <h2 style="text-align: center">내가 진보의 상인가? 보수의 상인가?</h2>
+
+    <div class="img-container">
+      <img class="sideImg" src="/img/right1.jpg" alt="한동훈" />
+
+      <div class="uploadFile">
+        <form id="file-upload-form" class="uploader">
+          <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+          <label for="file-upload" id="file-drag">
+            <img id="file-image" src="#" alt="Preview" class="hidden" />
+            <p class="resultMessage"></p>
+            <div id="start">
+              <i class="fa fa-download" aria-hidden="true"></i>
+              <div>내가 진보의 상인가? 보수의 상인가?</div>
+              <div id="notimage" class="hidden">사진 파일(.jpg, .png 등)을 업로드 해주세요.</div>
+              <span id="file-upload-btn" class="btn btn-primary">사진 업로드</span>
+            </div>
+
+            <div id="file-image"></div>
+            <div id="response" class="hidden">
+              <div id="messages"></div>
+              <progress class="progress" id="file-progress" value="0"><span>0</span>%</progress>
+            </div>
+          </label>
+        </form>
+      </div>
+      <img class="sideImg" src="/img/left1.jpg" alt="이재명" />
+    </div>
+    <div id="label-container"></div>
+
+    <div class="footer">제작자: jby</div>
+    <div id="disqus_thread"></div>
+    <script>
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+      /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+      (function () {
+        // DON'T EDIT BELOW THIS LINE
+        var d = document,
+          s = d.createElement("script");
+        s.src = "https://jby-2.disqus.com/embed.js";
+        s.setAttribute("data-timestamp", +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <script
+      src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
+      integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      Kakao.init("c089c8172def97eb00c07217cae17495"); // 사용하려는 앱의 JavaScript 키 입력
+    </script>
+
+    <a id="kakaotalk-sharing-btn" href="javascript:;">
+      <img
+        src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+        alt="카카오톡 공유 보내기 버튼"
+      />
+    </a>
+
+    <script>
+      Kakao.Share.createDefaultButton({
+        container: "#kakaotalk-sharing-btn",
+        objectType: "feed",
+        content: {
+          title: "딸기 치즈 케익",
+          description: "#케익 #딸기 #삼평동 #카페 #분위기 #소개팅",
+          imageUrl: "http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png",
+          link: {
+            // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+            mobileWebUrl: "https://developers.kakao.com",
+            webUrl: "https://developers.kakao.com",
+          },
+        },
+        social: {
+          likeCount: 286,
+          commentCount: 45,
+          sharedCount: 845,
+        },
+        buttons: [
+          {
+            title: "웹으로 보기",
+            link: {
+              mobileWebUrl: "https://developers.kakao.com",
+              webUrl: "https://developers.kakao.com",
+            },
+          },
+          {
+            title: "앱으로 보기",
+            link: {
+              mobileWebUrl: "https://developers.kakao.com",
+              webUrl: "https://developers.kakao.com",
+            },
+          },
+        ],
+      });
+    </script>
+
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+    <script type="text/javascript">
+      // More API functions here:
+      // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+      // the link to your model provided by Teachable Machine export panel
+      const URL = "https://teachablemachine.withgoogle.com/models/L_YrgLWql/";
+
+      let model, labelContainer, maxPredictions;
+
+      // Load the image model and setup the webcam
+      async function init1() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // or files from your local hard drive
+        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // append elements to the DOM
+
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) {
+          // and class labels
+          labelContainer.appendChild(document.createElement("div"));
+        }
+      }
+
+      // 4. 테스트 결과가 나온다.
+      async function predict() {
+        // predict can take in an image, video or canvas html element
+        //밑에 업로드된 이미지를 받아서 넣으면 될듯
+        let uploadImg = document.getElementById("file-image");
+        const prediction = await model.predict(uploadImg, false);
+        prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+        console.log(prediction[0].className);
+        let resultMessage;
+        switch (prediction[0].className) {
+          case "국힘 남":
+            resultMessage = "국힘 남";
+            break;
+          case "국힘 여":
+            resultMessage = "국힘 여";
+            break;
+          case "민주 남":
+            resultMessage = "민주 남";
+            break;
+          case "민주 여":
+            resultMessage = "민주 여";
+            break;
+          default:
+            resultMessage = "알수 없음";
+        }
+        $(".resultMessage").html(resultMessage);
+
+        for (let i = 0; i < maxPredictions; i++) {
+          labelContainer.childNodes[i].innerHTML = `<div class="prediction">${prediction[i].className} <div class="progress-bar">
+          <div class="progress" id ="progress${[i]}" style="width: ${Math.round(prediction[i].probability.toFixed(2) * 100 + 1) + "%"};">${
+            Math.round(prediction[i].probability.toFixed(2) * 100) + "%"
+          }</div></div>
+      </div>`;
+        }
+      }
+
+      // 사진 업로드
+      //
+      function ekUpload() {
+        function Init() {
+          console.log("Upload Initialised");
+
+          var fileSelect = document.getElementById("file-upload"),
+            fileDrag = document.getElementById("file-drag");
+
+          fileSelect.addEventListener("change", fileSelectHandler, false);
+
+          // Is XHR2 available?
+          var xhr = new XMLHttpRequest();
+          if (xhr.upload) {
+            // File Drop
+            fileDrag.addEventListener("dragover", fileDragHover, false);
+            fileDrag.addEventListener("dragleave", fileDragHover, false);
+            fileDrag.addEventListener("drop", fileSelectHandler, false);
+          }
+        }
+
+        function fileDragHover(e) {
+          var fileDrag = document.getElementById("file-drag");
+
+          e.stopPropagation();
+          e.preventDefault();
+
+          fileDrag.className = e.type === "dragover" ? "hover" : "modal-body file-upload";
+        }
+
+        function fileSelectHandler(e) {
+          // Fetch FileList object
+          var files = e.target.files || e.dataTransfer.files;
+
+          // Cancel event and hover styling
+          fileDragHover(e);
+
+          // Process all File objects
+          for (var i = 0, f; (f = files[i]); i++) {
+            parseFile(f);
+            uploadFile(f);
+          }
+        }
+
+        // Output
+        function output(msg) {
+          // Response
+          var m = document.getElementById("messages");
+          //   m.innerHTML = msg;
+        }
+
+        function parseFile(file) {
+          console.log(file.name);
+          output("<strong>" + encodeURI(file.name) + "</strong>");
+
+          // 이미지 파일 여부 확인
+          var isGood = /\.(?=gif|jpg|png|jpeg)/gi.test(file.name);
+          if (isGood) {
+            var reader = new FileReader(); // 파일을 읽기 위한 FileReader 객체 생성
+            reader.onload = function (e) {
+              // 읽기 동작이 성공적으로 완료되었을 때 호출되는 이벤트 핸들러
+              document.getElementById("start").classList.add("hidden");
+              document.getElementById("response").classList.remove("hidden");
+              document.getElementById("notimage").classList.add("hidden");
+              // Thumbnail Preview
+              var preview = document.getElementById("file-image");
+              preview.classList.remove("hidden");
+              preview.src = e.target.result; // 읽어들인 파일의 URL을 이미지 태그의 src 속성에 지정하여 미리보기 표시
+              init1().then(() => {
+                console.log("모델 불러오기 완료");
+                predict();
+              });
+            };
+            reader.readAsDataURL(file); // 파일을 읽어 Data URL로 변환
+          } else {
+            // 이미지 파일이 아닌 경우
+            document.getElementById("file-image").classList.add("hidden");
+            document.getElementById("notimage").classList.remove("hidden");
+            document.getElementById("start").classList.remove("hidden");
+            document.getElementById("response").classList.add("hidden");
+            document.getElementById("file-upload-form").reset();
+          }
+        }
+
+        function setProgressMaxValue(e) {
+          var pBar = document.getElementById("file-progress");
+
+          if (e.lengthComputable) {
+            pBar.max = e.total;
+          }
+        }
+
+        function updateFileProgress(e) {
+          var pBar = document.getElementById("file-progress");
+
+          if (e.lengthComputable) {
+            pBar.value = e.loaded;
+          }
+        }
+
+        function uploadFile(file) {
+          var xhr = new XMLHttpRequest(),
+            fileInput = document.getElementById("class-roster-file"),
+            pBar = document.getElementById("file-progress"),
+            fileSizeLimit = 1024; // In MB
+          if (xhr.upload) {
+            // Check if file is less than x MB
+            if (file.size <= fileSizeLimit * 1024 * 1024) {
+              // Progress bar
+              pBar.style.display = "inline";
+              xhr.upload.addEventListener("loadstart", setProgressMaxValue, false);
+              xhr.upload.addEventListener("progress", updateFileProgress, false);
+
+              // File received / failed
+              xhr.onreadystatechange = function (e) {
+                if (xhr.readyState == 4) {
+                  // Everything is good!
+                  // progress.className = (xhr.status == 200 ? "success" : "failure");
+                  // document.location.reload(true);
+                }
+              };
+
+              // Start upload
+              xhr.open("POST", document.getElementById("file-upload-form").action, true);
+              xhr.setRequestHeader("X-File-Name", file.name);
+              xhr.setRequestHeader("X-File-Size", file.size);
+              xhr.setRequestHeader("Content-Type", "multipart/form-data");
+              xhr.send(file);
+            } else {
+              output("Please upload a smaller file (< " + fileSizeLimit + " MB).");
+            }
+          }
+        }
+
+        // Check for the various File API support.
+        if (window.File && window.FileList && window.FileReader) {
+          Init();
+        } else {
+          document.getElementById("file-drag").style.display = "none";
+        }
+      }
+      ekUpload();
+    </script>
+  </body>
+</html>
