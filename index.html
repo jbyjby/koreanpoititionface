@@ -1,72 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- 카카오톡 -->
+
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/${VERSION}/kakao.min.js" integrity="${INTEGRITY_VALUE}" crossorigin="anonymous"></script>
     <script>
-      Kakao.init("38f29a9f6e62558e30e1318a0713e849");
-      Kakao.isInitialized();
+      Kakao.init("38f29a9f6e62558e30e1318a0713e849"); // 사용하려는 앱의 JavaScript 키 입력
+      console.log("카카오톡");
+      console.log(Kakao.isInitialized());
     </script>
+
     <title>정치관상테스트</title>
   </head>
   <body>
     <div class="title">
-      <h4>투표에 진심인 초보 개발자가 만든</h4>
-      <h1>정치 관상 테스트</h1>
+      <h4 style="font-size: 2vw">내가 <span class="title-blue">진보</span>의 상인가? <span class="title-red">보수</span>의 상인가?</h4>
+      <div class="main-title">
+        <img class="title-img" src="/img/title.jpg" alt="투표스탬프" />
+        <h1>정치 관상 테스트</h1>
+      </div>
     </div>
-    <p>정치인 얼굴 합성 설명 추가</p>
-    <div class="politician">
-      <img class="politicianImg" src="/img/left1.jpg" alt="민주 남자" />
-      <img class="politicianImg" src="/img/left2.jpg" alt="민주 여자" />
-      <img class="politicianImg" src="/img/right1.jpg" alt="국힘 남자 " />
-      <img class="politicianImg" src="/img/right2.jpg" alt="국힘 여자" />
+
+    <div>
+      <div class="politician">
+        <h3 style="font-size: 130%">대한민국 대표 정치인 평균 얼굴</h3>
+        <div class="politician-script-detail0">한국의 대표 정치인 얼굴을 정치 성향별로 합성해 보았습니다.</div>
+
+        <div class="politicianImg">
+          <img class="politicianImg-detail" id="politicianImg0" src="/img/left1.jpg" alt="민주 남자" />
+          <img class="politicianImg-detail" id="politicianImg1" src="/img/left2.jpg" alt="민주 여자" />
+          <img class="politicianImg-detail" id="politicianImg2" src="/img/right1.jpg" alt="국힘 남자 " />
+          <img class="politicianImg-detail" id="politicianImg3" src="/img/right2.jpg" alt="국힘 여자" />
+        </div>
+        <div class="politician-script">
+          <div class="politician-script-detail">진보 성향 정치인 평균 얼굴</div>
+          <div class="politician-script-detail">보수 성향 정치인 평균 얼굴</div>
+        </div>
+      </div>
     </div>
     <div class="ad">광고</div>
-    <h2 style="text-align: center">내가 진보의 상인가? 보수의 상인가?</h2>
+    <h2 style="text-align: center; font-size: 5vw">내가 진보의 상일까? 보수의 상일까?</h2>
+    <p style="text-align: center; font-size: 58%">⬇️⬇️관상에 따라 정치 성향을 알 수 있을까요? 재미로만 해주세요. 테스트하기🥰⬇️⬇️</p>
+
+    <div class="toggle">
+      <p style="font-size: 80%; padding-top: 0.8rem; padding-right: 0.8rem">여자</p>
+      <input type="checkbox" id="gender" />
+      <label for="gender">
+        <span class="knob"><i></i></span>
+      </label>
+      <p style="font-size: 80%; padding-top: 0.8rem; padding-left: 0.8rem">남자</p>
+    </div>
 
     <div class="img-container">
-      <img class="sideImg" src="/img/right1.jpg" alt="한동훈" />
-
+      <img class="sideImg" src="/img/한동훈.jpg" alt="한동훈" />
       <div class="uploadFile">
         <form id="file-upload-form" class="uploader">
           <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
-
-          <label for="file-upload" id="file-drag">
+          <label for="file-upload" id="file-drag" style="padding: 10% 0">
             <img id="file-image" src="#" alt="Preview" class="hidden" />
-            <p class="resultMessage"></p>
-            <div id="start">
-              <i class="fa fa-download" aria-hidden="true"></i>
-              <div>내가 진보의 상인가? 보수의 상인가?</div>
-              <div id="notimage" class="hidden">사진 파일(.jpg, .png 등)을 업로드 해주세요.</div>
-              <span id="file-upload-btn" class="btn btn-primary">사진 업로드</span>
+            <div class="resultTitle"></div>
+
+            <div class="start" id="start">
+              <div><i class="fa fa-download" aria-hidden="true" style="font-size: 8vw"></i></div>
+              <div style="font-size: 59%; width: 100%">
+                AI로 분석하는데 5초정도 걸려요.<br />조금만 기다려주세요.😅<br />사진은 분석 후 바로 삭제됩니다.
+              </div>
+              <div><span id="file-upload-btn" class="btn btn-primary">사진 업로드</span></div>
+
+              <div id="notimage" class="hidden" style="font-size: 60%">사진 파일(.jpg, .png 등)을 업로드 해주세요.</div>
             </div>
 
             <div id="file-image"></div>
             <div id="response" class="hidden">
-              <div id="messages"></div>
-              <progress class="progress" id="file-progress" value="0"><span>0</span>%</progress>
+              <!-- <div id="messages"></div> -->
+              <!-- <progress class="progress" id="file-progress" value="0"><span>0</span>%</progress> -->
+              <div>
+                <button class="btn btn-primary d-none" id="spinner" type="button" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  분석하는 중...
+                </button>
+              </div>
             </div>
           </label>
         </form>
       </div>
-      <img class="sideImg" src="/img/left1.jpg" alt="이재명" />
+      <img class="sideImg" src="/img/이재명.jpg" alt="이재명" />
     </div>
-    <div id="label-container"></div>
+    <!-- 공유 결과 들어올 자리 -->
+    <div class="result-box">
+      <div class="resultDesc"></div>
+      <div id="label-container"></div>
+      <div class="resultPeople"></div>
+      <div class="last-button">
+        <a href="javascript:shareMessage()" class="btn-gradient yellow small" sytle="text-align: center"> 공유하기</a>
+        <a href="#" class="btn-gradient blue small" onclick="reset()" sytle="text-align: center;" onclick="reset()">다시하기</a>
+      </div>
+    </div>
 
-    <div class="footer">제작자: jby</div>
     <div id="disqus_thread"></div>
+    <div class="footer">© JBY, 2024. All Rights Reserved.<br />문의: jby8775@gmail.com</div>
+
+    <!-- 댓글창 -->
     <script>
-      /**
-       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-      /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
       (function () {
         // DON'T EDIT BELOW THIS LINE
         var d = document,
@@ -76,88 +122,51 @@
         (d.head || d.body).appendChild(s);
       })();
     </script>
-    <script
-      src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
-      integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      Kakao.init("c089c8172def97eb00c07217cae17495"); // 사용하려는 앱의 JavaScript 키 입력
-    </script>
-
-    <a id="kakaotalk-sharing-btn" href="javascript:;">
-      <img
-        src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
-        alt="카카오톡 공유 보내기 버튼"
-      />
-    </a>
-
-    <script>
-      Kakao.Share.createDefaultButton({
-        container: "#kakaotalk-sharing-btn",
-        objectType: "feed",
-        content: {
-          title: "딸기 치즈 케익",
-          description: "#케익 #딸기 #삼평동 #카페 #분위기 #소개팅",
-          imageUrl: "http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png",
-          link: {
-            // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-            mobileWebUrl: "https://developers.kakao.com",
-            webUrl: "https://developers.kakao.com",
-          },
-        },
-        social: {
-          likeCount: 286,
-          commentCount: 45,
-          sharedCount: 845,
-        },
-        buttons: [
-          {
-            title: "웹으로 보기",
-            link: {
-              mobileWebUrl: "https://developers.kakao.com",
-              webUrl: "https://developers.kakao.com",
-            },
-          },
-          {
-            title: "앱으로 보기",
-            link: {
-              mobileWebUrl: "https://developers.kakao.com",
-              webUrl: "https://developers.kakao.com",
-            },
-          },
-        ],
-      });
-    </script>
-
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <!-- 티쳐블 머신 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
+    <script>
+      const reset = () => {
+        location.reload();
+      };
+
+      function resetPage() {
+        document.getElementById("file-image").src = "#";
+        document.querySelector(".result-box").style.display = "none";
+      }
+      document.querySelector("button[type='button']").addEventListener("click", resetPage);
+    </script>
     <script type="text/javascript">
       // More API functions here:
       // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
-
       // the link to your model provided by Teachable Machine export panel
-      const URL = "https://teachablemachine.withgoogle.com/models/L_YrgLWql/";
 
+      const URLman = "https://teachablemachine.withgoogle.com/models/WmsRjcJNC/";
+      const URLwoman = "https://teachablemachine.withgoogle.com/models/5X7-I4a6k/";
       let model, labelContainer, maxPredictions;
 
-      // Load the image model and setup the webcam
-      async function init1() {
-        const modelURL = URL + "model.json";
-        const metadataURL = URL + "metadata.json";
+      // 토글 부분
+      let gender = "2";
+      document.querySelector("#gender").addEventListener("change", function () {
+        gender = this.checked ? "1" : "2"; // 토글 값에 따라 성별 설정
+        console.log(gender);
+      });
 
-        // load the model and metadata
-        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-        // or files from your local hard drive
-        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+      async function init1() {
+        const modelURL = gender === "1" ? URLman + "model.json" : URLwoman + "model.json";
+        const metadataURL = gender === "1" ? URLman + "metadata.json" : URLwoman + "metadata.json";
+
+        // 모델 및 메타데이터 로드
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
 
-        // append elements to the DOM
-
+        // 돔에 엘리먼트 추가 div가 2개 생김
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) {
           // and class labels
@@ -165,40 +174,65 @@
         }
       }
 
-      // 4. 테스트 결과가 나온다.
+      // intit1과 동시에 예측하기
       async function predict() {
-        // predict can take in an image, video or canvas html element
-        //밑에 업로드된 이미지를 받아서 넣으면 될듯
-        let uploadImg = document.getElementById("file-image");
+        let uploadImg = document.getElementById("file-image"); //업로드한 이미지
         const prediction = await model.predict(uploadImg, false);
         prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+        console.log(prediction);
         console.log(prediction[0].className);
-        let resultMessage;
+        let result;
         switch (prediction[0].className) {
-          case "국힘 남":
-            resultMessage = "국힘 남";
+          case "보수남":
+            result = data.보수남;
             break;
-          case "국힘 여":
-            resultMessage = "국힘 여";
+          case "진보남":
+            result = data.진보남;
             break;
-          case "민주 남":
-            resultMessage = "민주 남";
+          case "보수여":
+            result = data.보수여;
             break;
-          case "민주 여":
-            resultMessage = "민주 여";
+          case "진보여":
+            result = data.진보여;
             break;
           default:
-            resultMessage = "알수 없음";
+            result = data.몰라;
         }
-        $(".resultMessage").html(resultMessage);
+        //결과 제목과 설명
+        document.querySelector(".resultTitle").innerHTML = result.title;
+        document.querySelector(".resultDesc").innerHTML = result.description;
+        document.querySelector(".resultPeople").innerHTML = `같은 성향 정치인: ${result.people}`;
+        const resultBox = document.querySelector(".result-box");
+        resultBox.style.display = "block";
 
+        //프로그래스바
         for (let i = 0; i < maxPredictions; i++) {
-          labelContainer.childNodes[i].innerHTML = `<div class="prediction">${prediction[i].className} <div class="progress-bar">
-          <div class="progress" id ="progress${[i]}" style="width: ${Math.round(prediction[i].probability.toFixed(2) * 100 + 1) + "%"};">${
-            Math.round(prediction[i].probability.toFixed(2) * 100) + "%"
-          }</div></div>
+          let predictionName;
+          predictionName =
+            prediction[i].className === "보수남" || prediction[i].className === "보수여"
+              ? "보수"
+              : prediction[i].className === "진보남" || prediction[i].className === "진보여"
+              ? "진보"
+              : prediction[i].className;
+
+          labelContainer.childNodes[
+            i
+          ].innerHTML = `<div class="prediction">${predictionName} <div class="progress-bar" style="background-color:#dedede">
+          <div class="progress" id ="progress${[i]}" style="height: 100%; border-radius:10px; width: ${
+            Math.round(prediction[i].probability.toFixed(2) * 99 + 1) + "%"
+          };"><span style="position: absolute">${Math.round(prediction[i].probability.toFixed(2) * 100) + "%"}</span></div></div>
       </div>`;
         }
+
+        const totalNum = Math.round(prediction[i].probability.toFixed(2) * 100 + 1); // 전체 %
+        const bar = document.querySelector(".progress"); // 프로그레스 바 요소 선택
+
+        let t = 0;
+        const barAnimation = setInterval(() => {
+          bar.style.width = t + "%"; // 너비 설정
+          t++; // 너비 증가
+          if (t >= totalNum) clearInterval(barAnimation); // 최대 너비에 도달하면 애니메이션 중지
+        }, 10);
       }
 
       // 사진 업로드
@@ -253,6 +287,7 @@
         }
 
         function parseFile(file) {
+          document.querySelector("#spinner").className = "btn btn-primary";
           console.log(file.name);
           output("<strong>" + encodeURI(file.name) + "</strong>");
 
@@ -271,6 +306,7 @@
               preview.src = e.target.result; // 읽어들인 파일의 URL을 이미지 태그의 src 속성에 지정하여 미리보기 표시
               init1().then(() => {
                 console.log("모델 불러오기 완료");
+                document.querySelector("#spinner").className = "btn btn-primary d-none";
                 predict();
               });
             };
@@ -344,5 +380,8 @@
       }
       ekUpload();
     </script>
+    <script src="js/share.js/" charset="UTF-8"></script>
+
+    <script src="js/data.js" charset="UTF-8"></script>
   </body>
 </html>
