@@ -109,7 +109,7 @@
       <div id="label-container"></div>
       <div class="resultPeople"></div>
       <div class="last-button">
-        <a href="javascript:shareMessage()" class="btn-gradient yellow small" sytle="text-align: center"> 공유하기</a>
+        <a id="shareButton" class="btn-gradient yellow small" sytle="text-align: center"> 공유하기</a>
         <a href="#" class="btn-gradient blue small" onclick="reset()" sytle="text-align: center;" onclick="reset()">다시하기</a>
       </div>
     </div>
@@ -187,30 +187,57 @@
         prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
         console.log(prediction);
         console.log(prediction[0].className);
-        let result;
+        let result, shareButton;
         switch (prediction[0].className) {
           case "보수남":
             result = data.보수남;
+            shareButton = data.보수남.className;
             break;
           case "진보남":
             result = data.진보남;
+            shareButton = data.진보남.className;
             break;
           case "보수여":
             result = data.보수여;
+            shareButton = data.보수여.className;
             break;
           case "진보여":
             result = data.진보여;
+            shareButton = data.진보여.className;
             break;
           default:
             result = data.몰라;
         }
+        //공유하기 버튼
+        //       function updateShareButton(className) {
+        //   let shareButton = document.getElementById("shareButton");
+        //   switch (className) {
+        //     case "보수남":
+        //       shareButton.href = "javascript:shareMessage0()";
+        //       break;
+        //     case "진보남":
+        //       shareButton.href = "javascript:shareMessage1()";
+        //       break;
+        //     case "보수여":
+        //       shareButton.href = "javascript:shareMessage2()";
+        //       break;
+        //     case "진보여":
+        //       shareButton.href = "javascript:shareMessage3()";
+        //       break;
+        //     default:
+        //       shareButton.href = "#"; // 기본값으로 설정
+        //   }
+        // }
+        // let className = prediction[0].className;
+        //   updateShareButton(className);
+
         //결과 제목과 설명
         document.querySelector(".resultTitle").innerHTML = result.title;
         document.querySelector(".resultDesc").innerHTML = result.description;
         document.querySelector(".resultPeople").innerHTML = `같은 성향 정치인: ${result.people}`;
         const resultBox = document.querySelector(".result-box");
         resultBox.style.display = "block";
-
+        document.getElementById("shareButton").href = shareButton;
         //프로그래스바
         for (let i = 0; i < maxPredictions; i++) {
           let predictionName;
