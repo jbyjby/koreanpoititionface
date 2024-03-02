@@ -9,8 +9,8 @@ function shareMessage0() {
 
       link: {
         // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-        mobileWebUrl: "http://127.0.0.1:5500",
-        webUrl: "http://127.0.0.1:5500",
+        mobileWebUrl: "https://koreanpoliticianface.netlify.app",
+        webUrl: "https://koreanpoliticianface.netlify.app",
       },
     },
     social: {
@@ -22,8 +22,8 @@ function shareMessage0() {
       {
         title: "나도 해보기",
         link: {
-          mobileWebUrl: "http://127.0.0.1:5500",
-          webUrl: "hhttp://127.0.0.1:5500",
+          mobileWebUrl: "https://koreanpoliticianface.netlify.app",
+          webUrl: "https://koreanpoliticianface.netlify.app",
         },
       },
       {
@@ -47,8 +47,8 @@ function shareMessage1() {
       imageUrl: "https://github.com/jbyjby/koreanpoititionface/blob/main/img/%ED%8F%89%EA%B7%A0%EC%A7%84%EB%B3%B4%EB%82%A8.png?raw=true",
       link: {
         // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-        mobileWebUrl: "http://127.0.0.1:5500",
-        webUrl: "http://127.0.0.1:5500",
+        mobileWebUrl: "https://koreanpoliticianface.netlify.app",
+        webUrl: "https://koreanpoliticianface.netlify.app",
       },
     },
     social: {
@@ -60,8 +60,8 @@ function shareMessage1() {
       {
         title: "나도 해보기",
         link: {
-          mobileWebUrl: "http://127.0.0.1:5500",
-          webUrl: "hhttp://127.0.0.1:5500",
+          mobileWebUrl: "https://koreanpoliticianface.netlify.app",
+          webUrl: "https://koreanpoliticianface.netlify.app",
         },
       },
       {
@@ -85,8 +85,8 @@ function shareMessage2() {
       imageUrl: "https://github.com/jbyjby/koreanpoititionface/blob/main/img/%ED%8F%89%EA%B7%A0%EB%B3%B4%EC%88%98%EC%97%AC.png?raw=true",
       link: {
         // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-        mobileWebUrl: "http://127.0.0.1:5500",
-        webUrl: "http://127.0.0.1:5500",
+        mobileWebUrl: "https://koreanpoliticianface.netlify.app",
+        webUrl: "https://koreanpoliticianface.netlify.app",
       },
     },
     social: {
@@ -98,8 +98,8 @@ function shareMessage2() {
       {
         title: "나도 해보기",
         link: {
-          mobileWebUrl: "http://127.0.0.1:5500",
-          webUrl: "hhttp://127.0.0.1:5500",
+          mobileWebUrl: "https://koreanpoliticianface.netlify.app",
+          webUrl: "https://koreanpoliticianface.netlify.app",
         },
       },
       {
@@ -123,8 +123,8 @@ function shareMessage3() {
       imageUrl: "https://github.com/jbyjby/koreanpoititionface/blob/main/img/%ED%8F%89%EA%B7%A0%EC%A7%84%EB%B3%B4%EC%97%AC.png?raw=true",
       link: {
         // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-        mobileWebUrl: "http://127.0.0.1:5500",
-        webUrl: "http://127.0.0.1:5500",
+        mobileWebUrl: "https://koreanpoliticianface.netlify.app",
+        webUrl: "https://koreanpoliticianface.netlify.app",
       },
     },
     social: {
@@ -136,8 +136,8 @@ function shareMessage3() {
       {
         title: "나도 해보기",
         link: {
-          mobileWebUrl: "http://127.0.0.1:5500",
-          webUrl: "hhttp://127.0.0.1:5500",
+          mobileWebUrl: "https://koreanpoliticianface.netlify.app",
+          webUrl: "https://koreanpoliticianface.netlify.app",
         },
       },
       {
