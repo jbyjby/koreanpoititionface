@@ -46,11 +46,29 @@
     <title>정치관상테스트</title>
   </head>
   <body>
-    <div class="title">
-      <h4 style="font-size: 2vw">내가 <span class="title-blue">진보</span>의 상인가? <span class="title-red">보수</span>의 상인가?</h4>
-      <div class="main-title">
-        <img class="title-img" src="/img/title.jpg" alt="투표스탬프" />
-        <h1>정치 관상 테스트</h1>
+    <div class="header">
+      <div class="dday">
+        제22대 국회의원 선거<br />2024. 4. 10.(수)
+        <div class="count">
+          D-
+          <div id="remain-time"></div>
+        </div>
+      </div>
+      <div class="title">
+        <h4 style="font-size: 2vw; margin-top: 2%">
+          내가 <span class="title-blue">진보</span>의 상인가? <span class="title-red">보수</span>의 상인가?
+        </h4>
+        <div class="main-title">
+          <img class="title-img" src="/img/title.jpg" alt="투표스탬프" />
+          <h1 style="font-size: 7.5vw; margin-bottom: 0">정치 관상 테스트</h1>
+        </div>
+      </div>
+      <div class="dday" style="visibility: hidden">
+        제22대 국회의원 선거<br />2024. 4. 10.(수)
+        <div class="count">
+          D-
+          <u><span id="number"></span></u>
+        </div>
       </div>
     </div>
 
@@ -136,7 +154,22 @@
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <div id="disqus_thread"></div>
     <div class="footer">© JBY, 2024. All Rights Reserved.<br />문의: jby8775@gmail.com</div>
+    <script>
+      var num; // num 변수를 선언합니다.
 
+      function diffday() {
+        const masTime = new Date("2024-04-10");
+        const todayTime = new Date();
+        const diff = masTime.getTime() - todayTime.getTime();
+        const diffDay = Math.floor(diff / (1000 * 60 * 60 * 24)) + 1;
+        console.log(todayTime);
+        console.log(diffDay);
+        num = diffDay; //
+        document.querySelector("#remain-time").innerHTML = num;
+      }
+
+      diffday(); // 함수를 호출하여 실행합니다.
+    </script>
     <!-- 댓글창 -->
     <script>
       (function () {
