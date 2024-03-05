@@ -144,6 +144,8 @@
       <div class="resultDesc"></div>
       <div id="label-container"></div>
       <div class="resultPeople"></div>
+      <div class="last-button-desc"></div>
+
       <div class="last-button">
         <a id="shareButton" class="btn-gradient yellow small" sytle="text-align: center"> 공유하기</a>
         <a href="#" class="btn-gradient blue small" onclick="reset()" sytle="text-align: center;" onclick="reset()">다시하기</a>
@@ -288,6 +290,8 @@
         document.querySelector(".resultTitle").innerHTML = result.title;
         document.querySelector(".resultDesc").innerHTML = result.description;
         document.querySelector(".resultPeople").innerHTML = `같은 성향 정치인: ${result.people}`;
+        document.querySelector(".last-button-desc").innerHTML = `⬇️⬇️업로드한 사진은 공유되지 않으니 마음껏 공유하세요.⬇️⬇️`;
+
         const resultBox = document.querySelector(".result-box");
         resultBox.style.display = "block";
         document.getElementById("shareButton").href = shareButton;
