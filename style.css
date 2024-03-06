@@ -571,3 +571,15 @@ input:checked + label > .knob > i:before {
   display: flex;
   justify-content: space-evenly;
 }
+
+.btn-gradient.green.small {
+  font-family: "JalnanGothic";
+  background: rgba(102, 203, 152, 1);
+  background: -moz-linear-gradient(top, rgba(102, 203, 152, 1) 0%, rgba(92, 184, 138, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(102, 203, 152, 1)), color-stop(100%, rgba(92, 184, 138, 1)));
+  background: -webkit-linear-gradient(top, rgba(102, 203, 152, 1) 0%, rgba(92, 184, 138, 1) 100%);
+  background: -o-linear-gradient(top, rgba(102, 203, 152, 1) 0%, rgba(92, 184, 138, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(102, 203, 152, 1) 0%, rgba(92, 184, 138, 1) 100%);
+  background: linear-gradient(to bottom, rgba(102, 203, 152, 1) 0%, rgba(92, 184, 138, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66cb98', endColorstr='#5c8a5c', GradientType=0 );
+}
